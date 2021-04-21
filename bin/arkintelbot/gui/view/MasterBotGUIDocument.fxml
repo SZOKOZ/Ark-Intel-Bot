@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arkintelbot.gui.MasterBotGUIController">
+   <children>
+      <MenuBar layoutY="-1.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.6" layoutX="140.0" layoutY="100.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TabPane fx:id="mainTabPane" layoutX="48.0" layoutY="-7.0" prefHeight="185.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab text="Start Panel">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <AnchorPane fx:id="toggleOnButton" layoutX="484.0" layoutY="14.0" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" onMouseClicked="#onClickToggleOnButton" prefHeight="40.0" prefWidth="100.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                       <children>
+                                          <Rectangle fx:id="toggleButtonBg" arcHeight="45.0" arcWidth="45.0" fill="WHITE" height="40.0" stroke="BLACK" strokeType="INSIDE" width="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <Circle fx:id="toggleButonCircle" fill="WHITE" layoutX="20.0" layoutY="20.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="224.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Downloads/spook.gif" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="tokenTextField" layoutX="225.0" layoutY="105.0" promptText="Discord Bot Token" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                      <Tab text="Servers">
+                           <content>
+                              <TableView fx:id="serversTableView" editable="true" prefHeight="200.0" prefWidth="200.0">
+                                <columns>
+                                  <TableColumn prefWidth="92.0" text="Server Name" />
+                                  <TableColumn prefWidth="98.0" text="IP" />
+                                    <TableColumn prefWidth="39.0" text="Port" />
+                                    <TableColumn prefWidth="156.0" text="Query Port (Optional)" />
+                                    <TableColumn prefWidth="213.0" text="Discord Channel ID or Name" />
+                                </columns>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#onAddNewClick" text="Add New" />
+                                          <MenuItem mnemonicParsing="false" onAction="#onDeleteClick" text="Delete" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </content>
+                        </Tab>
+                        <Tab text="Channel Setup">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane layoutY="25.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Slave Verification Channel" />
+                                          <TextField fx:id="svChannelTextField" promptText="Name or ID" GridPane.columnIndex="1" />
+                                          <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="❌" visible="false" GridPane.columnIndex="2" />
+                                          <Text fill="RED" layoutX="260.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❌" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Text fill="RED" layoutX="260.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❌" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <TextField fx:id="bmChannelTextField" promptText="Name or ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="tmiChannelTextField" promptText="Name or ID" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="BattleMetrics Channel" GridPane.rowIndex="1" />
+                                          <Label text="Tribe Member Input" GridPane.rowIndex="2" />
+                                          <Label text="Tribe Ally Input" GridPane.rowIndex="3" />
+                                          <TextField fx:id="taiChannelTextField" promptText="Name or ID" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="teiChannelTextField" promptText="Name or ID" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label text="Tribe Enemy Input" GridPane.rowIndex="4" />
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </GridPane>
+                                    <GridPane layoutX="300.0" layoutY="25.0">
+                                       <children>
+                                          <Label text="Enemy Alerts Channel" />
+                                          <TextField fx:id="eaChannelTextField" promptText="Name or ID" GridPane.columnIndex="1" />
+                                          <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="❌" visible="false" GridPane.columnIndex="2" />
+                                          <Text fill="RED" layoutX="260.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❌" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Text fill="RED" layoutX="260.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="❌" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="25.0" />
+                                       </columnConstraints>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="20.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="1.0" layoutY="1.0" text="Console" />
+                  <TextArea fx:id="consoleTextArea" editable="false" layoutX="23.0" layoutY="-8.0" prefHeight="184.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

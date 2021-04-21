@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="xtend-gen"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/KillZoneDiscordBots"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SteamCondenser"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/steamworks4j"/>
+	<classpathentry kind="lib" path="C:/Users/UltimateUser/Downloads/java_ee_sdk-8/glassfish5/glassfish/lib/javaee.jar"/>
+	<classpathentry kind="lib" path="G:/Users/UltimateUser/Downloads/logback-1.2.3/logback-1.2.3/logback-classic-1.2.3.jar" sourcepath="G:/Users/UltimateUser/Downloads/logback-1.2.3/logback-1.2.3/logback-classic-1.2.3-sources.jar"/>
+	<classpathentry kind="lib" path="G:/Users/UltimateUser/Downloads/logback-1.2.3/logback-1.2.3/logback-core-1.2.3.jar" sourcepath="G:/Users/UltimateUser/Downloads/logback-1.2.3/logback-1.2.3/logback-core-1.2.3-sources.jar"/>
+	<classpathentry kind="lib" path="G:/Users/UltimateUser/Downloads/JDA-3.8.0_433-withDependencies.jar" sourcepath="G:/Users/UltimateUser/Downloads/JDA-3.8.0_433-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/G:/Users/UltimateUser/Downloads/JDA-3.8.0_433-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="G:/Users/UltimateUser/source/repos/x64/Release"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
